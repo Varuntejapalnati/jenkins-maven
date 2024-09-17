@@ -4,12 +4,12 @@ pipeline {
         stage('Compile and Clean') { 
             steps {
 
-                bat "mvn clean compile"
+                sh "mvn clean compile"
             }
         }
         stage('Test') { 
             steps {
-                bat "mvn test site"
+                sh "mvn test site"
             }
             
              post {
@@ -21,7 +21,7 @@ pipeline {
 
         stage('deploy') { 
             steps {
-                bat "mvn package"
+                sh "mvn package"
             }
         }
     }
